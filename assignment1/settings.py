@@ -27,7 +27,6 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap3',
     'notes',
+    'crispy_forms'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,3 +84,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

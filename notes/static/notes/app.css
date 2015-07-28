@@ -39,16 +39,20 @@ div.bg {
 }
 .foodpic{
   position: relative;
-  top: -400px;
-  left: 400px;
+  top: -480px;
+  left: 450px;
   z-index: -1;
   max-height: 750px;
+}
+.foodpic6{
+  top: -400px;
+  left: 400px;
 }
 .bgtext{
   margin-top: 200px;
   margin-left: 40px;
   color: black;
-  max-width: 450px;
+  max-width: 500px;
 }
 .foodtext{
   margin-top: 200px;
@@ -79,7 +83,7 @@ div.bg {
 img.bg{
   position: absolute;
   top: 60px;
-  left: -900px;
+  left: -520px;
   z-index: -1;
   max-height: 750px;
 }

@@ -1,6 +1,11 @@
 {%extends 'notes/base.html'%}
+{% load crispy_forms_tags %}
 {%block title%}
-    {{food.name}} - McDonald's®
+  {%if object%}
+  Update {{object.name}} - McDonald's®
+  {%else%}
+  Add Food - McDonald's®
+  {%endif%}
 {%endblock%}
 {%block content%}
     <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -13,7 +18,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="http://assignment2-bryanyjy-2.c9.io">
-              <img src="../../static/notes/media/logo.png" alt="McDonald's®">
+              <img src="../../../static/notes/media/logo.png" alt="McDonald's®">
           </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -25,16 +30,13 @@
       </div>
     </div>
     <div class="container main">
-      <div class="container food">
-        <div class="bgtext">
-          <h1>{{food.name}}</h1>
-          <small>{{food.info}}</small>
-          <br>
-          <br>
-          <a href="http://assignment2-bryanyjy-2.c9.io/food/{{object.id}}/edit" role="button" class="btn btn-primary">Edit</a>
-        </div>
-        <img class="bg" src= "../../static/notes/media/foodbg.png" alt="McDonald's®">
-        <img class="foodpic foodpic{{food.id}}" src= "../../static/notes/media/food{{food.id}}.png" alt="McDonald's®">
+      <div class="row">
+        {%if object%}
+        <div class="page-header"><h1>Update {{object.name}}</h1></div>
+        {%else%}
+        <div class="page-header"><h1>Add a New Food</h1></div>
+        {%endif%}
+        {% crispy form %}
       </div>
     </div>
 {%endblock%}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 class Restaurant(models.Model):
@@ -8,6 +9,9 @@ class Restaurant(models.Model):
     
     def __unicode__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("restaurant_detail", kwargs={"pk":self.pk})
 
 class Food(models.Model):
     name = models.CharField(max_length=128)
@@ -16,3 +20,6 @@ class Food(models.Model):
     
     def __unicode__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("food_detail", kwargs={"pk":self.pk})
